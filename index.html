@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to-do list</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kode+Mono:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div>
+            Keep track of your plans bro!
+        </div>
+    </header>
+    <nav>
+        <div class="input-div"><input type="text" id="task-name" placeholder="Type in your task!"></div>
+        <div class="add-div"><button type="submit" id="add-task-btn">Add</button></div>
+    </nav>
+    <div id="main-title" >Tasks:</div>
+    <div class="tasks-container">
+        <div class="single-task">
+            <span>Clean up my room</span>
+        <div class="div-task-action">
+            <button type="submit" id="edit-task-btn">Edit</button>
+            <button type="submit" id="delete-task-btn">Delete</button>
+        </div></div>
+        <div class="single-task">
+            <span>Call my boss</span>
+        <div class="div-task-action">
+            <button type="submit" id="edit-task-btn">Edit</button>
+            <button type="submit" id="delete-task-btn">Delete</button>
+        </div></div>
+        
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

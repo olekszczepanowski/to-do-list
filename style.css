@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Kode Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+    
+}
+header{
+    font-size: 48px;
+    margin: 1%;
+    color: white;
+    text-align: center;
+}
+nav{
+    display: flex;
+    width: 40%;
+    height: 100%;
+    padding: 0.5%;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    background-color: #434343;
+    border-radius: 30px;
+}
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.input-div{
+    min-width:80%;
+}
+.add-div{
+    min-width:20%;
+    display: flex;
+    justify-content: end;
+
+}
+#task-name{
+  background-color: transparent;
+  border: none;
+  border-radius: 30px;
+  font-size: 18px;
+  width: 100%;
+  padding: 5%;
+}
+#add-task-btn {
+    color: rgb(13, 237, 13);
+    font-size: 18px;
+    padding: 8px;
+}
+#add-task-btn:hover {
+    color:  rgb(0, 255, 0);
+    font-weight: bold;
+    transition: 0.1s;
+}
+
+#main-title{
+    color: white;
+    margin: 1%;
+    font-size: 150%
+}
+.tasks-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+.single-task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5%;
+    margin-top: 0.4%;
+    margin-bottom: 0.4%;
+    width: 40%;
+    background-color: rgb(88, 88, 94);
+    border-radius: 30px;
+}
+.div-task-action{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+}
+.single-task span{
+    font-size: 110%;
+    padding: 4%;
+    text-wrap: wrap;
+    color:white
+}
+
+#edit-task-btn , #delete-task-btn{
+    padding: 4%;
+    font-size: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#edit-task-btn{
+    color: rgb(243, 5, 255)
+}
+#delete-task-btn{
+    color: crimson;
+}
+#edit-task-btn:hover{
+    font-weight: bold;
+    color: rgb(255, 0, 234);
+    transition: 0.1s;
+}
+#delete-task-btn:hover{
+    font-weight: bold;
+    color: rgb(250, 0, 21);
+    transition: 0.1s;
+}
+@media(max-width: 1180px){
+    .single-task{
+        width: 60%;
+    }
+    nav{
+        width: 60%;
+    }
+}
+@media(max-width: 900px){
+    .single-task{
+        width: 70%;
+    }
+    nav{
+        width: 70%;
+    }
+}
+
