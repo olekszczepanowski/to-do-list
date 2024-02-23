@@ -15,8 +15,16 @@ body{
     background: #000000;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    
-    
+}
+
+.light-mode {
+    background: rgb(114,118,122);
+    background: radial-gradient(circle, rgba(114,118,122,1) 20%, rgba(255,255,255,1) 100%);
+}
+.dark-mode{
+    background: #000000;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 header{
     font-size: 48px;
@@ -45,10 +53,9 @@ button{
     min-width:80%;
 }
 .add-div{
-    min-width:20%;
+    min-width:10%;
     display: flex;
     justify-content: end;
-
 }
 #task-name{
   background-color: transparent;
@@ -58,6 +65,7 @@ button{
   width: 100%;
   padding: 5%;
 }
+
 #add-task-btn {
     color: rgb(13, 237, 13);
     font-size: 18px;
@@ -128,11 +136,34 @@ button{
     color: rgb(250, 0, 21);
     transition: 0.1s;
 }
+#helpers-container{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+}
+#light-mode-div button, #dark-mode-div button{
+    padding: 3px;
+    color: rgba(255, 255, 255, 0.858);
+}
+#light-mode-div button:hover, #dark-mode-div button:hover{
+    color: white;
+    transition: 0.1s;
+}
+#title-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 40%;
+}
 @media(max-width: 1180px){
     .single-task{
         width: 60%;
     }
     nav{
+        width: 60%;
+    }
+    #title-div{
         width: 60%;
     }
 }
@@ -141,6 +172,9 @@ button{
         width: 70%;
     }
     nav{
+        width: 70%;
+    }
+    #title-div{
         width: 70%;
     }
 }
