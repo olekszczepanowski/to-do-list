@@ -82,7 +82,7 @@ button{
     margin: 1%;
     font-size: 150%
 }
-.tasks-container{
+#tasks-container{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -178,4 +178,3 @@ button{
         width: 70%;
     }
 }
-
