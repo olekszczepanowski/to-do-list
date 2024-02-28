@@ -18,7 +18,7 @@ var darkModeButton = document.getElementById('dark-mode-btn');
 lightModeButton.addEventListener('click', lightMode);
 darkModeButton.addEventListener('click', darkMode);
 
-function addTask(){
+function taskActions(){
     var input = document.getElementById("task-name");
     var inputValue = input.value;
     // handling the error of too long words
@@ -35,18 +35,41 @@ function addTask(){
     newTask.style.display = "flex";
     newTask.querySelector("span").textContent = inputValue;
     var deleteButton = newTask.querySelector("#delete-task-btn");
+    // var editButton = newTask.querySelector("#edit-task-btn");
     deleteButton.addEventListener('click', function() {
         deleteTask(newTask);
     });
+    // editButton.addEventListener('click',function(){
+    //     editTask(newTask);
+    // });
 
     input.value="";
     
     taskContainer.appendChild(newTask);
 }
 var addButton = document.getElementById('add-task-btn');
-addButton.addEventListener('click',addTask);
+addButton.addEventListener('click',taskActions);
 function deleteTask(task) {
     var taskContainer = document.getElementById("tasks-container");
     taskContainer.removeChild(task);
 }
+// function editTask(task){
+//     var inputElem = document.getElementById("added-task-name");
+//     inputElem.disabled = false;
+// }
+
+// function spanSwitch(e) {
+//     let txt = e.innerText;
+//     let element = document.getElementById('element');
+  
+//     element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
+//     document.getElementsByTagName('input')[0].focus();
+//   }
+  
+//   function spanReset(e) {
+//     let txt = e.value;
+//     let element = document.getElementById('element');
+  
+//     element.innerHTML = `<span onclick='spanSwitch(this)'> ${txt} </span>`;
+//   }
 
