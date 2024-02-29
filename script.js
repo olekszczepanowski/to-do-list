@@ -15,8 +15,8 @@ function darkMode(){
 
 var lightModeButton = document.getElementById('light-mode-btn');
 var darkModeButton = document.getElementById('dark-mode-btn');
-lightModeButton.addEventListener('click', lightMode);
-darkModeButton.addEventListener('click', darkMode);
+lightModeButton.addEventListener("click", lightMode);
+darkModeButton.addEventListener("click", darkMode);
 
 function taskActions(){
     var input = document.getElementById("task-name");
@@ -33,43 +33,38 @@ function taskActions(){
     var taskTemplate = document.querySelector(".single-task");
     var newTask = taskTemplate.cloneNode(true);
     newTask.style.display = "flex";
-    newTask.querySelector("span").textContent = inputValue;
+    newTask.querySelector("input").value = inputValue;
     var deleteButton = newTask.querySelector("#delete-task-btn");
-    // var editButton = newTask.querySelector("#edit-task-btn");
-    deleteButton.addEventListener('click', function() {
+    var editButton = newTask.querySelector("#edit-task-btn");
+    deleteButton.addEventListener("click", function() {
         deleteTask(newTask);
     });
-    // editButton.addEventListener('click',function(){
-    //     editTask(newTask);
-    // });
+    editButton.addEventListener("click", function() {
+        if(editButton.innerText.toLowerCase() == "edit"){
+            newTask.querySelector("input").removeAttribute("readonly");
+            newTask.querySelector("input").focus();
+            editButton.innerText = "Save";
+        }
+        else{
+            newTask.querySelector("input").setAttribute("readonly",true);
+            editButton.innerText = "Edit";
+        }
+    });
+   
 
     input.value="";
     
     taskContainer.appendChild(newTask);
 }
-var addButton = document.getElementById('add-task-btn');
-addButton.addEventListener('click',taskActions);
+var addButton = document.getElementById("add-task-btn");
+addButton.addEventListener("click",taskActions);
 function deleteTask(task) {
     var taskContainer = document.getElementById("tasks-container");
     taskContainer.removeChild(task);
 }
-// function editTask(task){
-//     var inputElem = document.getElementById("added-task-name");
-//     inputElem.disabled = false;
-// }
+function editTask(task) {
+    var inputElem = document.getElementById("added-task-name");
+    inputElem.removeAttribute("readonly");
+}
 
-// function spanSwitch(e) {
-//     let txt = e.innerText;
-//     let element = document.getElementById('element');
-  
-//     element.innerHTML = `<input onblur='spanReset(this)' value='${txt}' />`;
-//     document.getElementsByTagName('input')[0].focus();
-//   }
-  
-//   function spanReset(e) {
-//     let txt = e.value;
-//     let element = document.getElementById('element');
-  
-//     element.innerHTML = `<span onclick='spanSwitch(this)'> ${txt} </span>`;
-//   }
 
